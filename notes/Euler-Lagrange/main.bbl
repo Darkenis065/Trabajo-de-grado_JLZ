@@ -1,0 +1,136 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{ynt/global//global/global/global}
+    \entry{Euler-1744}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=f57a8c3746c4afcfc0cce86966aff75f}{%
+           family={Euler},
+           familyi={E\bibinitperiod},
+           given={Leonhard},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{f57a8c3746c4afcfc0cce86966aff75f}
+      \strng{fullhash}{f57a8c3746c4afcfc0cce86966aff75f}
+      \strng{fullhashraw}{f57a8c3746c4afcfc0cce86966aff75f}
+      \strng{bibnamehash}{f57a8c3746c4afcfc0cce86966aff75f}
+      \strng{authorbibnamehash}{f57a8c3746c4afcfc0cce86966aff75f}
+      \strng{authornamehash}{f57a8c3746c4afcfc0cce86966aff75f}
+      \strng{authorfullhash}{f57a8c3746c4afcfc0cce86966aff75f}
+      \strng{authorfullhashraw}{f57a8c3746c4afcfc0cce86966aff75f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Lausanne \& Geneva: Marcum-Michaelem Bousque}
+      \field{title}{{Methodus inveniendi lineas curvas maximi minimive proprietate gaudentes, sive solutio problematis isoperimetrici lattissimo sensu accepti}}
+      \field{year}{1744}
+      \verb{urlraw}
+      \verb https://scholarlycommons.pacific.edu/euler-works/65/
+      \endverb
+      \verb{url}
+      \verb https://scholarlycommons.pacific.edu/euler-works/65/
+      \endverb
+    \endentry
+    \entry{Landau}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=ab77fc1405f1025268c1fed8c4fe3104}{%
+           family={Landau},
+           familyi={L\bibinitperiod},
+           given={L\bibnamedelima D},
+           giveni={L\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=1e5737ddc6200d0118261e7bc577ab25}{%
+           family={Lifshitz},
+           familyi={L\bibinitperiod},
+           given={E.M.},
+           giveni={E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{0c0920d244a4ef518dc023815875721c}
+      \strng{fullhash}{0c0920d244a4ef518dc023815875721c}
+      \strng{fullhashraw}{0c0920d244a4ef518dc023815875721c}
+      \strng{bibnamehash}{0c0920d244a4ef518dc023815875721c}
+      \strng{authorbibnamehash}{0c0920d244a4ef518dc023815875721c}
+      \strng{authornamehash}{0c0920d244a4ef518dc023815875721c}
+      \strng{authorfullhash}{0c0920d244a4ef518dc023815875721c}
+      \strng{authorfullhashraw}{0c0920d244a4ef518dc023815875721c}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{1}
+      \field{title}{{Mechanics}}
+      \field{year}{1982}
+    \endentry
+    \entry{Goldstein}{book}{}{}
+      \name{author}{3}{}{%
+        {{hash=c0e35b6777e73243aa18df96822aa96b}{%
+           family={Goldstein},
+           familyi={G\bibinitperiod},
+           given={Herbert},
+           giveni={H\bibinitperiod}}}%
+        {{hash=3ad4e7046aff11f350cd20224879c53d}{%
+           family={Poole},
+           familyi={P\bibinitperiod},
+           given={Charles\bibnamedelima P.},
+           giveni={C\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=0e0ec111561781c854c4be89f5c2c20e}{%
+           family={Safko},
+           familyi={S\bibinitperiod},
+           given={John\bibnamedelima L.},
+           giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Addison-Wesley Longman}%
+      }
+      \strng{namehash}{32f074b45f5d53f593e5a279822a471a}
+      \strng{fullhash}{2d622f640f2ae64cf5a77bedcae76a4c}
+      \strng{fullhashraw}{2d622f640f2ae64cf5a77bedcae76a4c}
+      \strng{bibnamehash}{2d622f640f2ae64cf5a77bedcae76a4c}
+      \strng{authorbibnamehash}{2d622f640f2ae64cf5a77bedcae76a4c}
+      \strng{authornamehash}{32f074b45f5d53f593e5a279822a471a}
+      \strng{authorfullhash}{2d622f640f2ae64cf5a77bedcae76a4c}
+      \strng{authorfullhashraw}{2d622f640f2ae64cf5a77bedcae76a4c}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{1}
+      \field{title}{{Classical Mechanics}}
+      \field{year}{2002}
+    \endentry
+    \entry{Euler-Lagrange_letters}{misc}{}{}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labeltitlesource}{title}
+      \field{title}{{Euler's Correspondence with Joseph Louis de Lagrange}}
+      \verb{urlraw}
+      \verb http://eulerarchive.maa.org/correspondence/correspondents/Lagrange.html
+      \endverb
+      \verb{url}
+      \verb http://eulerarchive.maa.org/correspondence/correspondents/Lagrange.html
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
