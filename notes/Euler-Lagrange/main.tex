@@ -120,16 +120,28 @@ Where $S$ is called the action $q(t)$, $\dot{q}(t)$ are the generalized coordina
 Or
 
 \begin{equation}
-    \delta S = \int_{t_1}^{t_2} \mathcal{L}(q + \delta q,,\dot{q} + \delta \dot{q},t)dt  
+    \delta S = \int_{t_1}^{t_2} \mathcal{L}(q + \delta q,\dot{q} + \delta \dot{q},t)dt  
 \end{equation}
+
+For the next step is necesary to do some asumptions, one of them is that at the boundaries our system satisfy $q(t_1) =  q_1 \& q(t_2) = q_2$, we also had to define $q(t,\alpha)$ as:
+\newpage
+\begin{align}
+q_1(t,\alpha) = q(t,0) + \alpha\eta_1(t)
+\end{align}
+
+\begin{align*}
+q_2(t,\alpha) = q(t,0) + \alpha\eta_2(t)\\
+...           . ...    . ...\\   
+...           . ...    . ...\\    
+...           . ...    . ...\\    
+\end{align*}
+
 
 Which also can be written as:
 
 \begin{equation}
     \delta S = \int_{t_1}^{t_2} (\frac{\partial\mathcal{L}}{\partial q}\delta q + \frac{\partial \mathcal{L}}{\partial \dot{q}}\delta \dot{q})dt  
 \end{equation}
-
-
 
 
 %----------------------------------------------------------

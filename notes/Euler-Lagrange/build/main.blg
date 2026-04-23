@@ -1,0 +1,15 @@
+[0] Config.pm:308> INFO - This is Biber 2.20
+[0] Config.pm:311> INFO - Logfile is 'build/main.blg'
+[52] biber:340> INFO - === Sa Apr 11, 2026, 22:05:46
+[65] Biber.pm:420> INFO - Reading 'build/main.bcf'
+[107] Biber.pm:994> INFO - Found 4 citekeys in bib section 0
+[117] Biber.pm:4463> INFO - Processing section 0
+[123] Biber.pm:4654> INFO - Looking for bibtex file 'rho.bib' for section 0
+[124] bibtex.pm:1713> INFO - LaTeX decoding ...
+[127] bibtex.pm:1519> INFO - Found BibTeX data source 'rho.bib'
+[158] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[158] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[158] Biber.pm:4283> INFO - Sorting list 'ynt/global//global/global/global' of type 'entry' with template 'ynt' and locale 'en-US'
+[158] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
+[164] bbl.pm:676> INFO - Writing 'build/main.bbl' with encoding 'UTF-8'
+[166] bbl.pm:779> INFO - Output to build/main.bbl
