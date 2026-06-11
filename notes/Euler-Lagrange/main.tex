@@ -59,12 +59,12 @@
 % Corresponding author-, Document- information
 %----------------------------------------------------------
 
-\corres{\textsuperscript{\textasteriskcentered}Corresponding author: \href{mailto:author.one@institute.org}{author.one@institute.org} (A. One).}
-\corres{\textsuperscript{\textdagger}These authors contributed equally to this work.}
+%\corres{\textsuperscript{\textasteriskcentered}Corresponding author: \href{mailto:author.one@institute.org}{author.one@institute.org} (A. One).}
+%\corres{\textsuperscript{\textdagger}These authors contributed equally to this work.}
 
 %----------------------------------------------------------
 
-\docinfo{This document class was prepared on Overleaf and compiled with the pdf\LaTeX{} main.tex > biber main > pdf\LaTeX{} sequence. No errors were found during the compilation process. Rho-class supports external editors, though additional setup may be required.} 
+%\docinfo{This document class was prepared on Overleaf and compiled with the pdf\LaTeX{} main.tex > biber main > pdf\LaTeX{} sequence. No errors were found during the compilation process. Rho-class supports external editors, though additional setup may be required.} 
 
 %----------------------------------------------------------
 
@@ -98,7 +98,7 @@
 
 The Euler-Lagrange equations are one of the most important family of differential equations on physics and mathematics, it's formulation represents a generalized method for solving variational optimization problems. It was first derivated by Leonard Euler on his treatise \textit{Methodus inveniendi lineas curvas maximi minimive proprietate gaudentes} by using geometrical considerations\cite{Euler-1744}. One year after Lagrange wrote a letter to Euler presenting a fully analytic method to reach the same equations\cite{Euler-Lagrange_letters}.
 
-The Euler-Lagrange equations are also a great tool to reach the movement equations of a dynamical problem, this is because on the Euler-Lagrange method you only have to define the lagrangian functional $\mathcal{L} = T + V$, in most problems it reduces to find or propose a potential, when you operate the lagrangian on the E-L equations you reach the movment equietions of the problem. This method is considerably simplier than identifiying forces and make the sumatories.
+The Euler-Lagrange equations are also a great tool to reach the movement equations of a dynamical problem, this is because on the Euler-Lagrange method you only have to define the lagrangian functional $\mathcal{L} = T - V$, in most problems it reduces to find or propose a potential, when you operate the lagrangian on the E-L equations you reach the movment equietions of the problem. This method is considerably simplier than identifiying forces and make the sumatories.
 
 
 In the next sections we are going to show the derivation process, the harmonic oscilator example, the analytical solution of this example, a numerical implementation and we are going to do some conclusions about this formalism.
@@ -106,7 +106,7 @@ In the next sections we are going to show the derivation process, the harmonic o
 
 \section{The action minimization process}
 
-The action in physics is defined in the next way \cite{Landau}:
+The action of a physical system is defined in the next way \cite{Landau}:
 
 \begin{equation}
     S = \int_{t_1}^{t_2} \mathcal{L}(q,\dot{q},t)dt  
@@ -117,44 +117,116 @@ Where $S$ is called the action $q(t)$, $\dot{q}(t)$ are the generalized coordina
     \delta S = \delta  \int_{t_1}^{t_2} \mathcal{L}(q,\dot{q},t)dt  
 \end{equation}
 
-Or
-
-\begin{equation}
-    \delta S = \int_{t_1}^{t_2} \mathcal{L}(q + \delta q,\dot{q} + \delta \dot{q},t)dt  
-\end{equation}
-
-For the next step is necesary to do some asumptions, one of them is that at the boundaries our system satisfy $q(t_1) =  q_1 \& q(t_2) = q_2$, we also had to define $q(t,\alpha)$ as:
-\newpage
+For the next step is necesary to do some asumptions, one of them is that at the boundaries our system satisfy $q(t_1) =  q_1$ and $ q(t_2) = q_2$, we also had to define $q(t,\alpha)$ as:
+\newpage 
 \begin{align}
 q_1(t,\alpha) = q(t,0) + \alpha\eta_1(t)
 \end{align}
 
 \begin{align*}
 q_2(t,\alpha) = q(t,0) + \alpha\eta_2(t)\\
-...           . ...    . ...\\   
-...           . ...    . ...\\    
-...           . ...    . ...\\    
+\vdots \vdots \vdots   
 \end{align*}
 
-
-Which also can be written as:
+So now a variation on $S$ can be written as:
 
 \begin{equation}
-    \delta S = \int_{t_1}^{t_2} (\frac{\partial\mathcal{L}}{\partial q}\delta q + \frac{\partial \mathcal{L}}{\partial \dot{q}}\delta \dot{q})dt  
+\delta S = \int_{t_1}^{t_2} (\frac{\partial\mathcal{L}}{\partial q}\delta q + \frac{\partial \mathcal{L}}{\partial \dot{q}}\delta \dot{q})dt  
 \end{equation}
 
+Or in a more general way:
 
+\begin{equation*}
+    \frac{dS}{d\alpha} = \int_{t_1}^{t_2} (\frac{\partial\mathcal{L}}{\partial q}\frac{\partial{q}}{\partial \alpha} + \frac{\partial \mathcal{L}}{\partial \dot{q}}\frac{\partial \dot{q}}{\partial \alpha})dt  
+\end{equation*}
+
+Now we can integrate by parts on the second term, and get:
+
+\begin{equation*} 
+    \int_{t_1}^{t_2} \frac{\partial\mathcal{L}}{\partial q}\frac{\partial{q}}{\partial \alpha}dt +  \frac{\partial \mathcal L}{\partial \dot{q}}\frac{\partial q}{\partial \alpha}\Big|_{t_1}^{t_2} - \int_{t_1}^{t_2} \frac{d}{dt}(\frac{\partial \mathcal{L}}{\partial \dot{q}})\frac{\partial q}{\partial \alpha}dt
+\end{equation*}
+
+
+
+Here the evaluated term is equal to zero because we set that $q(t)$ is fixed at the boundaries so there is no variation in these times. we can now extract the derivate of $q$ with respect to $\alpha$ of every term of the integral and then our variation turns on:
+
+\begin{equation*}
+   \int_{t_1}^{t_2} \frac{\partial q}{\partial \alpha} (\frac{\partial \mathcal{L}}{\partial q}-\frac{d}{dt}(\frac{\partial \mathcal{L}}{\partial \dot{q}}))dt = 0
+\end{equation*} 
+
+We know that the term $\frac{\partial q}{\partial \alpha}$ is not in general equal to 0 so the natural conclussion is that:
+
+\begin{equation}
+    \frac{d}{dt}(\frac{\partial \mathcal L}{\partial \dot{q}}) - \frac{\partial \mathcal{L}}{\partial q} = 0
+    \label{ELEQ}
+\end{equation}
+
+This family of differential equations are called the Euler-Lagrange equations and $\mathcal{L}$ is a functional, a common way to write a lagrangian for every system is:
+\\
+\begin{equation}
+    \mathcal{L} = T-V
+\end{equation}
+\\
+Where $T$ and $V$ are the kinetic and potential energy respectively. This is not the only way to obtain a lagrangian for a system but is always a correct way to find them \cite{Goldstein}. 
 %----------------------------------------------------------
 
 \section{The harmonic oscilator}
-
+To get the differential equation of the harmonic oscilator is necesary to introduce an harmonic potential that is $V=\frac{1}{2}kx^{2}$ to construct the lagrangian for the system; this lead us to:
+\\
+\begin{equation*}
+    \mathcal{L} = \frac{1}{2}(mv^{2} - kx^{2})
+\end{equation*}
+\\
+Replacing this lagrangian in \ref{ELEQ} and taking $\omega_{0}^{2} = km^{-1}$ lead us to:
+\\
+\begin{equation}
+    \frac{d^{2}}{dt^{2}} x(t) + \omega_{0}^{2}x(t) = 0
+    \label{HOEQ}
+\end{equation}
+\\
+The solution of this differential equation describes the dynamics of an harmonic oscilator.
 %----------------------------------------------------------
 
 \subsection{The analytical way}
+To solve this equation analitically a solution of the form $e^{\lambda t}$ should be proposed, this is because it's second derivate $\lambda^{2}e^{\lambda t}$ have the same form as the function so replacing this proposed solution in \ref{HOEQ} and dividing both sides of the equation by $e^{\lambda t}$ (that is in general diferent to $0$) we find the characreristic equation:
+\\
+\begin{equation*}
+    \lambda^{2} + \omega_{0}^{2} = 0
+\end{equation*}
+\\
+This solution lead us to two possible complex values of $\lambda$, this is we have two possible solutions for the differential equation  but we know that the general solution of a linear differential equation is the linear combination of all possible solutions so we can write:
+\\
+\begin{equation*}
+x(t) = C_{1} e^{i\omega_{0} t} + C_{2} e^{-i\omega_{0} t} 
+\end{equation*}
+\\
+And by the Euler identity for complex exponentials the solution take the form:
+\\
+\begin{equation}
+x(t) = C_1 \cos(t) + C_2 \sin(t) 
+\end{equation}
+\\
+That is the general solution for the harmonic oscilator problem.
 
 %----------------------------------------------------------
 
 \subsection{The numerical way}
+
+One way to solve this numerically is to use the Rungekutta method RK4. For this work propouses the solution will be implemented in C++, the script used is:
+
+\lstinputlisting[
+    language=C++, 
+    firstline=61, 
+    lastline=77, 
+    %caption={Kernel del algoritmo Runge-Kutta 4 (RK4).},
+    label={code:rk4_kernel}
+    ]{RK4.cpp}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=\columnwidth]{figures/osciladorarmonico.png}
+    \end{figure}
+
 
 %----------------------------------------------------------
 
@@ -162,7 +234,6 @@ Which also can be written as:
 
 
 
-\section{}
 
 
 
@@ -499,7 +570,7 @@ Which also can be written as:
         \end{center}
 \end{comment}
 %----------------------------------------------------------
-
+\nobalance
 \printbibliography
 
 %----------------------------------------------------------
